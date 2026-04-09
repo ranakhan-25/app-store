@@ -13,14 +13,6 @@ const ErrorPage = () => {
         </p>
 
         <div className="flex gap-4 justify-center">
-          {/* Reload Button */}
-          <button
-            onClick={() => window.location.reload()}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
-          >
-            Reload Page
-          </button>
-
           {/* Apps Page Button */}
           <button
             onClick={() => navigate("/all-apps")}
