@@ -28,6 +28,7 @@ const DashBoard = () => {
             innerRadius="80%"
             outerRadius="100%"
             cornerRadius={50}
+            
             paddingAngle={5}
             isAnimationActive={true}
           />
