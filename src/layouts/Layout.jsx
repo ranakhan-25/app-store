@@ -1,5 +1,5 @@
 import React from 'react'
-// import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import Navbar from './Navbar/Navbar'
 import { Outlet } from 'react-router'
 import Footer from './Footer/Footer'
@@ -7,7 +7,7 @@ import Footer from './Footer/Footer'
 const Layout = () => {
   return (
     <div className='max-w-400 mx-auto'>
-      {/* <ToastContainer/> */}
+      <ToastContainer/>
       <Navbar />
       <Outlet />
       <Footer/>

@@ -1,7 +1,22 @@
+import { useContext } from "react";
+import {toast } from 'react-toastify';
 import { FaStar } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
+import AppContext from "../../Context/AppContext";
 
-const Installed = ({ item, handelRemoveApp }) => {
+const Installed = ({ item }) => {
+  
+  const { setInstallApps } = useContext(AppContext)
+  
+  
+
+  const handelRemoveApp = (id) => {
+  const getData = JSON.parse(localStorage.getItem("apps")) || [];
+  const updatedData = getData.filter(item => item.id !== id);
+  setInstallApps(updatedData);
+  localStorage.setItem("apps", JSON.stringify(updatedData));
+  toast.success("Uninstall successfully");
+};
 
   return (
     <div>

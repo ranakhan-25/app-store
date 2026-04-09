@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
+
+import { useContext, useEffect } from "react";
 import AppContext from "../../Context/AppContext";
 import Installed from "./Installed";
+import AppNotFound from "../../Error/AppNotFound"
 
 const InstallApp = () => {
-  const { installApp } = useContext(AppContext);
+  const { installApp, setInstallApps } = useContext(AppContext)
   
+  useEffect(() => {
+    const storedApps = JSON.parse(localStorage.getItem("apps")) || [];
+    setInstallApps(storedApps);
+  }, []);
 
   return (
     <div className="py-10 px-3 sm:px-5 md:px-[9%] bg-gray-50">
@@ -19,7 +25,7 @@ const InstallApp = () => {
         <h1 className="text-xl font-medium">{installApp.length > 0 ? installApp.length : "Not"} Apps Found </h1>
 
         <div>
-          {installApp.length > 0 ? installApp.map((app) => <Installed key={app.id} item={app} />) : <div className=" flex h-50 justify-center items-center bg-gray-200 rounded-xl my-2"><h1 className="text-2xl font-bold">no app install yet</h1></div>}
+          {installApp.length > 0 ? installApp.map((app) => <Installed key={app.id} item={app}   />) : <AppNotFound/>}
         </div>
       </div>
     </div>

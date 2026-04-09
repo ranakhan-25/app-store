@@ -5,6 +5,7 @@ import InstallApp from "../pages/Install/InstallApp";
 import Layout from "../layouts/Layout";
 import Error from "../Error/Error";
 import AppDetails from "../pages/Apps/AppDetails";
+import DashBoard from "../pages/Dashbord/DashBoard";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/app/:id",
         element:<AppDetails/>
+      },
+      {
+        path: "/dashboard",
+        element:<DashBoard/>
       }
     ]
   },

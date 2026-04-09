@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import useDataFetch from "../../CustomHooks/useDataFetch";
-// import {toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 
 
 import { useContext } from "react";
@@ -34,10 +34,13 @@ const AppDetails = () => {
     const existApp = installApp.find((item) => item.id === newApp.id);
 
     if (existApp) {
-      alert("This app already Installed");
+      toast.error("This app already Installed");
     } else {
       handelInstallApp(newApp);
-      alert("Install successfully");
+      toast.success("Install successfully");
+      const newData = JSON.parse(localStorage.getItem("apps")) || [];
+      newData.push(newApp);
+      localStorage.setItem("apps",JSON.stringify(newData))
     }
   };
 

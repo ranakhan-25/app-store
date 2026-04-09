@@ -10,6 +10,7 @@ const Navbar = () => {
     <NavLink className={({isActive})=> `${isActive ? "underline bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent" : ""} font-medium `} to="/">Home</NavLink>
     <NavLink className={({isActive})=> `${isActive ? "underline bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent" : ""} font-medium `} to="/all-apps">Apps</NavLink>
     <NavLink className={({isActive})=> `${isActive ? "underline bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent" : ""} font-medium `} to="/install-apps">Installation</NavLink>
+    <NavLink className={({isActive})=> `${isActive ? "underline bg-linear-to-r from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent" : ""} font-medium `} to="/dashboard">Dashboard</NavLink>
   </>
   return (
     <div className="navbar sm:px-[9%]">
